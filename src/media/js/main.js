@@ -1,6 +1,7 @@
 var $ = global.$ = global.jQuery = require('./vendor/jquery-3.2.0.min');
 
 var TweenMax = global.TweenMax = require('./vendor/tweenmax.min');
+require('./vendor/scrolltoplugin.min');
 require('./vendor/jquery.gsap.min');
 
 require('./utils/jqExtensions');
@@ -21,7 +22,8 @@ var App = global.App = new (function App() {
     };
 
     this.modules = {
-
+		Menu: require('./modules/Menu'),
+	    Header: require('./modules/Header')
     };
 
     // Startup

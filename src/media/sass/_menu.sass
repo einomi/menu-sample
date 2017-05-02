@@ -1,0 +1,113 @@
+html
+	+min-screen($breakpoint-sm)
+		border-right: $scrollbar-width solid transparent
+		margin-right: calc(100vw - 100%)
+		margin-left: 0
+		width: 100vw
+		overflow-x: hidden
+		+box
+		
+.burger
+	cursor: pointer
+	z-index: 99
+	&__line
+		@extend .animated
+		width: 16px
+		height: 2px
+		background-color: #000
+		margin-bottom: 5px
+		&:last-child
+			margin-bottom: 0
+
+.menu
+	$indent-side: 52px
+	position: fixed
+	right: 0
+	height: 100%
+	min-height: 100vh
+	width: 300px
+	background-color: #eee
+	text-align: right
+	z-index: 100
+	overflow-y: auto
+	will-change: transform
+	visibility: hidden
+	opacity: 0
+	-webkit-overflow-scrolling: touch
+	+box
+	&__content
+		position: relative
+		padding: 150px $indent-side
+		height: 100%
+		min-height: 600px
+		+box
+	&__items
+		+vertical-align('.menu__content')
+	&__close
+		position: absolute
+		right: $indent-side
+		top: 60px
+	&__group
+		margin-bottom: 37px
+		&:last-child
+			margin-bottom: 0
+		&-title-wrapper
+			margin-bottom: 17px
+		&-title
+			@extend .animated
+			font-size: to-em(16px)
+			font-style: italic
+			opacity: 0.6
+			text-decoration: none
+			color: #000
+			&:hover
+				color: #222
+	&__item
+		margin-bottom: 16px
+		&-link
+			@extend .animated
+			text-transform: uppercase
+			text-decoration: none
+			font-size: to-em(20px)
+			color: #000
+			font-weight: 500
+			&:hover
+				color: #222
+	&__social
+		position: absolute
+		bottom: 40px
+		right: $indent-side
+	+max-screen($breakpoint-sm)
+		width: 100%
+
+.close
+	cursor: pointer
+	width: 12px
+	height: 12px
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+	&:hover
+		.close__line
+			background-color: #222
+			transition: none
+	&:active
+		transform: scale(1.2)
+	&:before
+		+b
+		top: -10px
+		right: -10px
+		bottom: -10px
+		left: -10px
+	&__line
+		@extend .animated
+		position: absolute
+		left: 50%
+		top: 50%
+		width: 12px
+		height: 2px
+		margin-left: -6px
+		margin-top: -1px
+		background-color: #000
+		&:first-child
+			transform: rotate(45deg)
+		&:last-child
+			transform: rotate(-45deg)

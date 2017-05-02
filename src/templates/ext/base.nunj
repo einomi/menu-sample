@@ -14,6 +14,8 @@
 
 <div class="wrapper">
 
+	{% include '../parts/_menu.nunj' %}
+
 	{% block content %}
 	{% endblock content %}
 

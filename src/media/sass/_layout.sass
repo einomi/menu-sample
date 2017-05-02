@@ -4,6 +4,7 @@
 	height: auto !important
 	height: 100%
 	margin-bottom: -110px
+	overflow: hidden
 	&__push
 		height: 110px
 
@@ -11,6 +12,8 @@
 	position: relative
 	width: 960px
 	margin: auto
+	+max-screen($breakpoint-sm)
+		width: 100%
 
 .row
 	@extend .clearfix
